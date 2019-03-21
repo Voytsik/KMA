@@ -1,0 +1,19 @@
+using Lab01.Models;
+using Lab01.ViewModels;
+using System.Windows.Controls;
+
+namespace Lab01.Views
+{
+    /// <summary>
+    /// Interaction logic for MainView.xaml
+    /// </summary>
+    public partial class MainView : UserControl
+    {
+        public MainView(Storage storage)
+        {
+            InitializeComponent();
+            MainViewModel viewModel = new MainViewModel(storage);
+            DataContext = viewModel;
+        }
+    }
+}

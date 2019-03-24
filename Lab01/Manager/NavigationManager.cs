@@ -1,15 +1,21 @@
-﻿using Lab01.Models;
+using Lab01.Models;
 
-namespace Lab01.Manager {
-    class NavigationManager {
+namespace Lab01.Manager
+{
+    class NavigationManager
+    {
         private static NavigationManager _instance;
         private static object _lock = new object();
         private NavigationModel _navigationModel;
 
-        public static NavigationManager Instance {
-            get {
-                if (_instance == null) {
-                    lock (_lock) {
+        public static NavigationManager Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    lock (_lock)
+                    {
                         _instance = new NavigationManager();
                     }
                 }
@@ -17,11 +23,13 @@ namespace Lab01.Manager {
             }
         }
 
-        public void Initialize(NavigationModel navigationModel) {
+        public void Initialize(NavigationModel navigationModel)
+        {
             _navigationModel = navigationModel;
         }
 
-        public void Navigate() {
+        public void Navigate()
+        {
             _navigationModel?.Navigate();
         }
     }
